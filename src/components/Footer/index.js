@@ -1,4 +1,5 @@
 import React from 'react'
+import { animateScroll as scroll } from 'react-scroll'
 import { FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa'
 import {
   FooterContainer,
@@ -12,12 +13,18 @@ import {
 } from './FooterElements'
 
 const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop()
+  }
+
   return (
     <FooterContainer>
       <FooterWrap>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>ezLoad</SocialLogo>
+            <SocialLogo to='/' onClick={toggleHome}>
+              ezLoad
+            </SocialLogo>
             <WebsiteRights>
               ezLoad © {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
