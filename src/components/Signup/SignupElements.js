@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const Container = styled.div`
+export const SignupContainer = styled.div`
   min-height: 692px;
   position: fixed;
   bottom: 0;
@@ -17,7 +17,7 @@ export const Container = styled.div`
   );
 `
 
-export const FormWrap = styled.div`
+export const SignupFormWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ export const FormWrap = styled.div`
   }
 `
 
-export const Icon = styled(Link)`
+export const SignupIcon = styled(Link)`
   margin-left: 32px;
   margin-top: 32px;
   text-decoration: none;
@@ -42,7 +42,7 @@ export const Icon = styled(Link)`
   }
 `
 
-export const FormContent = styled.div`
+export const SignupFormContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@ export const FormContent = styled.div`
   }
 `
 
-export const Form = styled.form`
+export const SignupForm = styled.form`
   background: #010101;
   max-width: 400px;
   height: auto;
@@ -70,7 +70,7 @@ export const Form = styled.form`
   }
 `
 
-export const FormH1 = styled.h1`
+export const SignupFormH1 = styled.h1`
   margin-bottom: 40px;
   color: #fff;
   font-size: 20px;
@@ -78,20 +78,20 @@ export const FormH1 = styled.h1`
   text-align: center;
 `
 
-export const FormLabel = styled.label`
+export const SignupFormLabel = styled.label`
   margin-bottom: 8px;
   font-size: 14px;
   color: #fff;
 `
 
-export const FormInput = styled.input`
+export const SignupFormInput = styled.input`
   padding: 16px 16px;
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
 `
 
-export const FormButton = styled.button`
+export const SignupFormButton = styled.button`
   background: #01bf71;
   padding: 16px 0;
   border: none;
@@ -99,11 +99,4 @@ export const FormButton = styled.button`
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-`
-
-export const Text = styled(Link)`
-  text-align: center;
-  margin-top: 24px;
-  color: #fff;
-  font-size: 14px;
 `
