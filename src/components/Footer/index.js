@@ -16,42 +16,18 @@ const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
+              <FooterLinkTitle>About</FooterLinkTitle>
               <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>How it works</FooterLink>
-              <FooterLink to='/signin'>Testimonials</FooterLink>
-              <FooterLink to='/signin'>Careers</FooterLink>
+              <FooterLink to='/signin'>Sign in</FooterLink>
               <FooterLink to='/signin'>Github</FooterLink>
-              <FooterLink to='/signin'>Terms of Service</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to='/signin'>About us</FooterLink>
-              <FooterLink to='/signin'>How it works</FooterLink>
-              <FooterLink to='/signin'>Testimonials</FooterLink>
-              <FooterLink to='/signin'>Careers</FooterLink>
-              <FooterLink to='/signin'>Github</FooterLink>
-              <FooterLink to='/signin'>Terms of Service</FooterLink>
+              <FooterLinkTitle>Contact</FooterLinkTitle>
+              <FooterLink to='/signin'>Email</FooterLink>
+              <FooterLink to='/signin'>Phone</FooterLink>
+              <FooterLink to='/signin'>LinkedIn</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
-          <FooterLinkItems>
-            <FooterLinkTitle>About Us</FooterLinkTitle>
-            <FooterLink to='/signin'>About us</FooterLink>
-            <FooterLink to='/signin'>How it works</FooterLink>
-            <FooterLink to='/signin'>Testimonials</FooterLink>
-            <FooterLink to='/signin'>Careers</FooterLink>
-            <FooterLink to='/signin'>Github</FooterLink>
-            <FooterLink to='/signin'>Terms of Service</FooterLink>
-          </FooterLinkItems>
-          <FooterLinkItems>
-            <FooterLinkTitle>About Us</FooterLinkTitle>
-            <FooterLink to='/signin'>About us</FooterLink>
-            <FooterLink to='/signin'>How it works</FooterLink>
-            <FooterLink to='/signin'>Testimonials</FooterLink>
-            <FooterLink to='/signin'>Careers</FooterLink>
-            <FooterLink to='/signin'>Github</FooterLink>
-            <FooterLink to='/signin'>Terms of Service</FooterLink>
-          </FooterLinkItems>
         </FooterLinksContainer>
       </FooterWrap>
     </FooterContainer>
