@@ -3,11 +3,6 @@ import { FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa'
 import {
   FooterContainer,
   FooterWrap,
-  FooterLinksContainer,
-  FooterLinksWrapper,
-  FooterLinkItems,
-  FooterLinkTitle,
-  FooterLink,
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
@@ -20,23 +15,6 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrap>
-        <FooterLinksContainer>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>About</FooterLinkTitle>
-              <FooterLink to='/'>About us</FooterLink>
-              <FooterLink to='/signin'>Sign in</FooterLink>
-              <FooterLink to='/'>Github</FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>Contact</FooterLinkTitle>
-              <FooterLink to='/'>Email</FooterLink>
-              <FooterLink to='/'>Phone</FooterLink>
-              <FooterLink to='/'>LinkedIn</FooterLink>
-              <FooterLink to='/'>YouTube</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-        </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to='/'>ezLoad</SocialLogo>
