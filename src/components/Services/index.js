@@ -1,4 +1,16 @@
 import React from 'react'
+import Icon1 from '../../images/svg-4.svg'
+import Icon2 from '../../images/svg-5.svg'
+import Icon3 from '../../images/svg-6.svg'
+import {
+  ServicesCard,
+  ServicesContainer,
+  ServicesH1,
+  ServicesH2,
+  ServicesIcon,
+  ServicesP,
+  ServicesWrapper,
+} from './ServicesElements'
 
 const Services = () => {
   return (
@@ -7,18 +19,18 @@ const Services = () => {
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1} />
-          <ServicesH2>Reduce expenses</ServicesH2>
-          <ServicesP>We help reduce your fees and increase revenue</ServicesP>
+          <ServicesH2>Credit Score</ServicesH2>
+          <ServicesP>Lorem ipsum, dolor sit amet consectetur</ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2} />
           <ServicesH2>Reduce expenses</ServicesH2>
-          <ServicesP>We help reduce your fees and increase revenue</ServicesP>
+          <ServicesP>Lorem ipsum, dolor sit amet consectetur</ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3} />
-          <ServicesH2>Reduce expenses</ServicesH2>
-          <ServicesP>We help reduce your fees and increase revenue</ServicesP>
+          <ServicesH2>Credit</ServicesH2>
+          <ServicesP>Lorem ipsum, dolor sit amet consectetur</ServicesP>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>
