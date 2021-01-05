@@ -7,12 +7,12 @@ const User = require('../models/userModel')
 // register
 router.post('/register', async (req, res) => {
   try {
-    let { email, password, passwordCheck, displayName } = req.body
+    let { email, password, passwordCheck, displayName, phoneNum } = req.body
 
     // validation
 
     // make sure all fields are entered
-    if (!email || !password || !passwordCheck)
+    if (!email || !password || !passwordCheck || !phoneNum)
       return res.status(400).json({ msg: 'Not all fields have been entered.' })
 
     // make sure the password is more than 5 characters
@@ -46,12 +46,13 @@ router.post('/register', async (req, res) => {
       email,
       password: passwordHash,
       displayName,
+      phoneNum,
     })
 
     const savedUser = await newUser.save()
     res.json(savedUser)
   } catch (err) {
-    res.status(500), json({ error: err.message })
+    res.status(500).json({ error: err.message })
   }
 })
 
@@ -84,20 +85,48 @@ router.post('/login', async (req, res) => {
         id: user._id,
         displayName: user.displayName,
         email: user.email,
+        phoneNum: user.phoneNum,
       },
     })
   } catch (err) {
-    res.status(500), json({ error: err.message })
+    res.status(500).json({ error: err.message })
   }
 })
 
+// delete
 router.delete('/delete/:id', auth, async (req, res) => {
   try {
-    console.log(req)
     const deletedUser = await User.findByIdAndDelete(req.params.id)
     res.json(deletedUser)
   } catch (err) {
-    res.status(500), json({ error: err.message })
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// update user
+//Updating User
+router.patch('/update/:id', async (req, res) => {
+  const updateUser = await User.findById(req.params.id)
+  if (!updateUser) {
+    res.status(400).json({ message: 'User not found' })
+  } else {
+    const salt = await bcrypt.genSalt()
+    const hashedPass = await bcrypt.hash(updateUser.password, salt)
+    User.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        email: req.body.email,
+        password: hashedPass,
+        displayName: req.body.displayName,
+        phoneNum: req.body.phoneNum,
+      }
+    )
+      .then((result) => {
+        res.json(result)
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message })
+      })
   }
 })
 
