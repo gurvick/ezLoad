@@ -94,10 +94,29 @@ router.post('/login', async (req, res) => {
 })
 
 // delete
-router.delete('/delete/:id', auth, async (req, res) => {
+
+router.delete('/delete', auth, async (req, res) => {
   try {
-    const deletedUser = await User.findByIdAndDelete(req.params.id)
+    const deletedUser = await User.findByIdAndDelete(req.user)
     res.json(deletedUser)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// check if token is valid
+router.post('/tokenIsValid', async (req, res) => {
+  try {
+    const token = req.header('x-auth-token')
+    if (!token) return res.json(false)
+
+    const verified = jwt.verify(token, process.env.JWT_SECRET)
+    if (!verified) return res.json(false)
+
+    const user = await User.findById(verified.id)
+    if (!user) return res.json(false)
+
+    return res.json(true)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
@@ -128,6 +147,14 @@ router.patch('/update/:id', async (req, res) => {
         res.status(500).json({ error: err.message })
       })
   }
+})
+
+router.get('/', auth, async (req, res) => {
+  const user = await User.findById(req.user)
+  res.json({
+    displayName: user.displayName,
+    id: user._id,
+  })
 })
 
 module.exports = router
