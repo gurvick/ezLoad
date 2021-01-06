@@ -11,7 +11,15 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    originAddress: {
+      type: String,
+      required: true,
+    },
     destination: {
+      type: String,
+      required: true,
+    },
+    destinationAddress: {
       type: String,
       required: true,
     },
