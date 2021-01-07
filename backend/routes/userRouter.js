@@ -122,7 +122,6 @@ router.post('/tokenIsValid', async (req, res) => {
   }
 })
 
-// update user
 //Updating User
 router.patch('/update/:id', async (req, res) => {
   const updateUser = await User.findById(req.params.id)

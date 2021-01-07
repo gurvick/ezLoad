@@ -69,7 +69,7 @@ export default function SignIn() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <FormButton type='submit' onClick={submit}>
+              <FormButton type='submit' onClick={submit} to='/postings'>
                 Continue
               </FormButton>
               <Text to='/signup'>Create an Account</Text>

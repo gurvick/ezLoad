@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-import UserContext from '../../context/UserContext'
 import { FaBars } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
+import { useHistory } from 'react-router-dom'
 import { animateScroll as scroll } from 'react-scroll'
+import UserContext from '../../context/UserContext'
 import {
   Nav,
   NavbarContainer,
@@ -15,7 +16,7 @@ import {
   NavBtnLink,
 } from './NavbarElements'
 
-const Navbar = ({ toggle }) => {
+export default function Navbar({ toggle }) {
   const [scrollNav, setScrollNav] = useState(false)
 
   const changeNav = () => {
@@ -32,6 +33,18 @@ const Navbar = ({ toggle }) => {
 
   const toggleHome = () => {
     scroll.scrollToTop()
+  }
+
+  const { userData, setUserData } = useContext(UserContext)
+  const history = useHistory()
+  const signup = () => history.push('/signup')
+  const signin = () => history.push('/signin')
+  const logout = () => {
+    setUserData({
+      token: undefined,
+      user: undefined,
+    })
+    localStorage.setItem('auth-token', '')
   }
 
   return (
@@ -95,14 +108,23 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
             </NavMenu>
-            <NavBtn>
-              <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-            </NavBtn>
+            {userData.user ? (
+              <NavBtn>
+                <NavBtnLink onClick={logout}>Log Out</NavBtnLink>
+              </NavBtn>
+            ) : (
+              <>
+                <NavBtn>
+                  <NavBtnLink onClick={signup}>Sign Up</NavBtnLink>
+                </NavBtn>
+                <NavBtn>
+                  <NavBtnLink onClick={signin}>Sign In</NavBtnLink>
+                </NavBtn>
+              </>
+            )}
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
     </>
   )
 }
-
-export default Navbar
