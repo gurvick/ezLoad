@@ -9,7 +9,9 @@ router.post('/', auth, async (req, res) => {
     const {
       pickup,
       origin,
+      originAddress,
       destination,
+      destinationAddress,
       trip,
       length,
       weight,
@@ -37,7 +39,9 @@ router.post('/', auth, async (req, res) => {
     const newPost = new Post({
       pickup,
       origin,
+      originAddress,
       destination,
+      destinationAddress,
       trip,
       length,
       weight,
@@ -73,6 +77,16 @@ router.delete('/:id', auth, async (req, res) => {
       })
     const deletedPost = await Post.findByIdAndDelete(req.params.id)
     res.json(deletedPost)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Get all posts
+router.get('/feed', auth, async (req, res) => {
+  try {
+    const allPosts = await Post.find()
+    res.json(allPosts)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }

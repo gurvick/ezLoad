@@ -6,6 +6,7 @@ import Home from './pages'
 import SigninPage from './pages/signin'
 import SignupPage from './pages/signup'
 import UserContext from './context/UserContext'
+import PostingsPage from './pages/postings'
 
 function App() {
   const [userData, setUserData] = useState({
@@ -46,6 +47,7 @@ function App() {
           <Route path='/' component={Home} exact />
           <Route path='/signin' component={SigninPage} exact />
           <Route path='/signup' component={SignupPage} exact />
+          <Route path='/postings' component={PostingsPage} exact />
         </Switch>
       </UserContext.Provider>
     </Router>
