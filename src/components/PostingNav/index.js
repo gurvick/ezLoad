@@ -17,28 +17,8 @@ import {
 } from './PostingNavElements'
 
 export default function PostingNavbar({ toggle }) {
-  const [scrollNav, setScrollNav] = useState(false)
-
-  const changeNav = () => {
-    if (window.scrollY >= 80) {
-      setScrollNav(true)
-    } else {
-      setScrollNav(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', changeNav)
-  }, [])
-
-  const toggleHome = () => {
-    scroll.scrollToTop()
-  }
-
   const { userData, setUserData } = useContext(UserContext)
   const history = useHistory()
-  const signup = () => history.push('/signup')
-  const signin = () => history.push('/signin')
   const logout = () => {
     setUserData({
       token: undefined,
@@ -47,13 +27,19 @@ export default function PostingNavbar({ toggle }) {
     localStorage.setItem('auth-token', '')
     history.push('/')
   }
+  const home = () => {
+    history.push('/')
+  }
+  const postings = () => {
+    history.push('/postings')
+  }
 
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <PostingNav scrollNav={scrollNav}>
+        <PostingNav>
           <PostingNavbarContainer>
-            <PostingNavLogo to='/' onClick={toggleHome}>
+            <PostingNavLogo to='/' onClick={home}>
               <h1>ezLoad</h1>
             </PostingNavLogo>
             <PostingMobileIcon onClick={toggle}>
@@ -62,50 +48,38 @@ export default function PostingNavbar({ toggle }) {
             <PostingNavMenu>
               <PostingNavItem>
                 <PostingNavLinks
-                  to='about'
+                  onClick={home}
                   smooth={true}
                   duration={500}
                   spy={true}
                   exact='true'
                   offset={-80}
                 >
-                  About
+                  Home
                 </PostingNavLinks>
               </PostingNavItem>
               <PostingNavItem>
                 <PostingNavLinks
-                  to='discover'
+                  onClick={postings}
                   smooth={true}
                   duration={500}
                   spy={true}
                   exact='true'
                   offset={-80}
                 >
-                  Discover
+                  Postings
                 </PostingNavLinks>
               </PostingNavItem>
               <PostingNavItem>
                 <PostingNavLinks
-                  to='services'
+                  to='services' // Add account settings page
                   smooth={true}
                   duration={500}
                   spy={true}
                   exact='true'
                   offset={-80}
                 >
-                  Services
-                </PostingNavLinks>
-              </PostingNavItem>
-              <PostingNavItem>
-                <PostingNavLinks
-                  to='signup'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Sign Up
+                  Account Settings
                 </PostingNavLinks>
               </PostingNavItem>
             </PostingNavMenu>
