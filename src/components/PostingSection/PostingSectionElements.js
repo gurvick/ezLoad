@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md'
 
 export const PostingContainer = styled.div`
-  background: #0c0c0c;
+  background: #01bf71;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 800px;
+  height: 3000px;
   position: relative;
   z-index: 1;
 

@@ -99,7 +99,7 @@ export const PostingNavBtn = styled.nav`
 
 export const PostingNavBtnLink = styled(LinkR)`
   border-radius: 50px;
-  background: #01bf71;
+  background: #fff;
   white-space: nowrap;
   padding: 10px 22px;
   color: #010606;
@@ -112,7 +112,7 @@ export const PostingNavBtnLink = styled(LinkR)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: #010606;
+    color: #01bf71;
   }
 `

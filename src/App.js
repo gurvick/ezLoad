@@ -7,6 +7,7 @@ import SigninPage from './pages/signin'
 import SignupPage from './pages/signup'
 import UserContext from './context/UserContext'
 import PostingsPage from './pages/postings'
+import CreatePost from './pages/createPost'
 
 function App() {
   const [userData, setUserData] = useState({
@@ -48,6 +49,7 @@ function App() {
           <Route path='/signin' component={SigninPage} exact />
           <Route path='/signup' component={SignupPage} exact />
           <Route path='/postings' component={PostingsPage} exact />
+          <Route path='/createpost' component={CreatePost} exact />
         </Switch>
       </UserContext.Provider>
     </Router>

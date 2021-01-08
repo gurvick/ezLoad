@@ -68,6 +68,7 @@ export const PostSidebarLink = styled(LinkS)`
 export const PostSideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 `
 
 export const PostSidebarRoute = styled(LinkR)`

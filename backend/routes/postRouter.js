@@ -5,6 +5,7 @@ const Post = require('../models/postModel')
 
 // Post a load
 router.post('/', auth, async (req, res) => {
+  console.log(req.body)
   try {
     const {
       pickup,

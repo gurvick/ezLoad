@@ -31,6 +31,9 @@ const PostingSidebar = ({ isOpen, toggle }) => {
   const postings = () => {
     history.push('/postings')
   }
+  const createpost = () => {
+    history.push('/createpost')
+  }
 
   return (
     <PostSidebarContainer isOpen={isOpen} onClick={toggle}>
@@ -43,6 +46,9 @@ const PostingSidebar = ({ isOpen, toggle }) => {
           <PostSidebarLink onClick={postings}>Postings</PostSidebarLink>
           <PostSidebarLink onClick={toggle}>Account Settings</PostSidebarLink>
         </PostSidebarMenu>
+        <PostSideBtnWrap>
+          <PostSidebarRoute onClick={createpost}>Create Post</PostSidebarRoute>
+        </PostSideBtnWrap>
         <PostSideBtnWrap>
           <PostSidebarRoute onClick={logout}>Log Out</PostSidebarRoute>
         </PostSideBtnWrap>

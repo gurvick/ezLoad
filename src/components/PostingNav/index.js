@@ -33,6 +33,9 @@ export default function PostingNavbar({ toggle }) {
   const postings = () => {
     history.push('/postings')
   }
+  const createpost = () => {
+    history.push('/createpost')
+  }
 
   return (
     <>
@@ -83,6 +86,11 @@ export default function PostingNavbar({ toggle }) {
                 </PostingNavLinks>
               </PostingNavItem>
             </PostingNavMenu>
+            <PostingNavBtn>
+              <PostingNavBtnLink onClick={createpost}>
+                Create Post
+              </PostingNavBtnLink>
+            </PostingNavBtn>
             <PostingNavBtn>
               <PostingNavBtnLink onClick={logout}>Log Out</PostingNavBtnLink>
             </PostingNavBtn>

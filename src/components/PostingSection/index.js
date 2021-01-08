@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom'
 import {
   PostingContainer,
   PostingBg,
-  PostingVideoBg,
   PostingContent,
   PostingH1,
 } from './PostingSectionElements'
@@ -23,12 +22,8 @@ const PostingSection = () => {
   return (
     <>
       <PostingContainer id='home'>
-        <PostingBg>
-          <PostingVideoBg autoPlay loop muted src={Video} type='video/mp4' />
-        </PostingBg>
-        <PostingContent>
-          <PostingH1>Find Your Next Load</PostingH1>
-        </PostingContent>
+        <PostingBg></PostingBg>
+        <PostingContent></PostingContent>
       </PostingContainer>
     </>
   )
