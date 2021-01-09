@@ -92,7 +92,7 @@ export default function Navbar({ toggle }) {
                   exact='true'
                   offset={-80}
                 >
-                  Services
+                  Features
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -104,7 +104,7 @@ export default function Navbar({ toggle }) {
                   exact='true'
                   offset={-80}
                 >
-                  Sign Up
+                  Start Now
                 </NavLinks>
               </NavItem>
             </NavMenu>
