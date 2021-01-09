@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const postSchema = new mongoose.Schema(
   {
     pickup: {
-      type: Date,
+      type: String,
       required: true,
     },
     origin: {

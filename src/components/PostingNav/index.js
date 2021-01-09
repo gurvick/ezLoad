@@ -17,6 +17,20 @@ import {
 } from './PostingNavElements'
 
 export default function PostingNavbar({ toggle }) {
+  const [scrollNav, setScrollNav] = useState(false)
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true)
+    } else {
+      setScrollNav(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav)
+  }, [])
+
   const { userData, setUserData } = useContext(UserContext)
   const history = useHistory()
   const logout = () => {
@@ -41,7 +55,7 @@ export default function PostingNavbar({ toggle }) {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <PostingNav>
-          <PostingNavbarContainer>
+          <PostingNavbarContainer scrollNav={scrollNav}>
             <PostingNavLogo to='/' onClick={home}>
               <h1>ezLoad</h1>
             </PostingNavLogo>

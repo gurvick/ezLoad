@@ -4,7 +4,7 @@ import { Link as LinkS } from 'react-scroll'
 import { FaBars } from 'react-icons/fa'
 
 export const PostingNav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? '#white' : 'transparent')};
+  background: ${({ scrollNav }) => (scrollNav ? '#000' : '#000')};
   height: 80px;
   margin-top: -80px;
   display: flex;

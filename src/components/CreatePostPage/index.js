@@ -1,8 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
-import ErrorNotice from '../misc/ErrorNotice'
-import UserContext from '../../context/UserContext'
 import {
   CPContainer,
   CPFormWrap,

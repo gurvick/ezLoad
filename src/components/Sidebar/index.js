@@ -15,8 +15,8 @@ import {
 const Sidebar = ({ isOpen, toggle }) => {
   const { userData, setUserData } = useContext(UserContext)
   const history = useHistory()
-  const signup = () => history.push('/signup')
   const signin = () => history.push('/signin')
+  const signup = () => history.push('/signup')
   const logout = () => {
     setUserData({
       token: undefined,

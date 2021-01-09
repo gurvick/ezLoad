@@ -5,7 +5,7 @@ import { FaTimes } from 'react-icons/fa'
 
 export const PostSidebarContainer = styled.aside`
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
   height: 100%;
   background: #0d0d0d;

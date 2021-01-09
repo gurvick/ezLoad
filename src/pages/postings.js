@@ -4,6 +4,7 @@ import PostingSection from '../components/PostingSection'
 import UserContext from '../context/UserContext'
 import { useHistory } from 'react-router-dom'
 import PostingSidebar from '../components/PostingSidebar'
+import PostingHeroSection from '../components/PostingHero'
 
 const PostingsPage = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,6 +21,7 @@ const PostingsPage = () => {
         <>
           <PostingSidebar isOpen={isOpen} toggle={toggle} />
           <PostingNavbar toggle={toggle} />
+          <PostingHeroSection />
           <PostingSection />
         </>
       ) : (

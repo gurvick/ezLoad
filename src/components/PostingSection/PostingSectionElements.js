@@ -1,105 +1,90 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import React from 'react'
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md'
 
-export const PostingContainer = styled.div`
-  background: #01bf71;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 30px;
-  height: 3000px;
-  position: relative;
-  z-index: 1;
-
-  :before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.1) 100%
-      ),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
-    z-index: 2;
-  }
-`
-
-export const PostingBg = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-`
-
-export const PostingVideoBg = styled.video`
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  background: #232a34;
-`
-
-export const PostingContent = styled.div`
-  z-index: 3;
-  max-width: 1200px;
-  position: absolute;
-  padding: 8px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const PostingH1 = styled.h1`
+export const PostingInfoContainer = styled.div`
   color: #fff;
-  font-size: 48px;
-  text-align: center;
+  background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#fff')};
 
   @media screen and (max-width: 768px) {
-    font-size: 40px;
+    padding: 100px 0;
   }
+`
+
+export const PostingInfoWrapper = styled.div`
+  display: grid;
+  z-index: 1;
+  height: 600px;
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 24px;
+  justify-content: center;
+`
+
+export const PostingInfoRow = styled.div`
+  display: grid;
+  grid-auto-columns: minmax(auto, 1fr);
+  align-items: center;
+  grid-template-areas: ${({ imgStart }) =>
+    imgStart ? `'col2 col1'` : `'col1 col2'`};
+
+  @media screen and (max-width: 768px) {
+    grid-template-areas: ${({ imgStart }) =>
+      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+  }
+`
+
+export const PostingColumn1 = styled.div`
+  margin-bottom: 15px;
+  width: 500px;
+  grid-area: col1;
+`
+
+export const PostingColumn2 = styled.div`
+  margin-bottom: 15px;
+  padding: 0 15px;
+  grid-area: col2;
+`
+
+export const PostingTextWrapper = styled.div`
+  max-width: 540px;
+  padding-top: 0;
+  padding-bottom: 60px;
+`
+
+export const PostingTopLine = styled.p`
+  color: #01bf71;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+`
+
+export const PostingHeading = styled.h1`
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#010606')};
 
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
 `
 
-export const PostingP = styled.p`
-  margin-top: 24px;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  max-width: 600px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 24px;
-  }
-
-  @media screen and (max-width: 480px) {
-    font-size: 18px;
-  }
+export const PostingSubtitle = styled.p`
+  max-width: 440px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  color: ${({ darkText }) => (darkText ? '#fff' : '#010606')};
 `
 
-export const PostingBtnWrapper = styled.div`
-  margin-top: 32px;
+export const PostingBtnWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const PostingArrowForward = styled(MdArrowForward)`
-  margin-left: 8px;
-  font-size: 20px;
-`
-
-export const PostingArrowRight = styled(MdKeyboardArrowRight)`
-  margin-left: 8px;
-  font-size: 20px;
+  justify-content: right;
 `
