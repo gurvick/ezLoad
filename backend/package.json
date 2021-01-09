@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index/index.js",
     "dev": "nodemon index",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build ==prefix client"
   },
   "author": "Gurvick Ghai",
   "license": "ISC",
