@@ -32,7 +32,7 @@ export default function CreatePostPage() {
     e.preventDefault()
     console.log('posted')
     Axios.post(
-      'http://localhost:5000/posts/',
+      '/posts/',
       {
         pickup: pickup,
         origin: origin,
