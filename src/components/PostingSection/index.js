@@ -45,7 +45,7 @@ const PostingSection = () => {
 
   useEffect(() => {
     axios
-      .get('/posts/feed', {
+      .get('http://localhost:5000/posts/feed', {
         headers: {
           'x-auth-token': localStorage.getItem('auth-token'),
         },

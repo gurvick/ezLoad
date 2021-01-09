@@ -2,7 +2,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 require('dotenv').config()
-const path = require('path')
 
 // Set up express
 
@@ -35,14 +34,8 @@ mongoose.connect(
 app.use('/users', require('./routes/userRouter'))
 app.use('/posts', require('./routes/postRouter'))
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../build'))
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../', 'build', 'index.html'))
-  })
-}
-// app.use(express.static('../build'))
+app.use(express.static('../build'))
 
-// app.get('*', (req, res) =>
-//   res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-// )
+app.get('*', (req, res) =>
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+)
