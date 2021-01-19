@@ -13,6 +13,45 @@ When you first open up the website, you will be greeted with a stunning live her
 - REST API developed with Express and Node to add, delete, and get users and posts
 - Post and user management using MongoDB
 
+## Technologies used
+
+- MongoDB
+- ExpressJS
+- React
+- NodeJS
+
 ## Pictures
 
+### Hero Section with Navbar
+
 ![Hero](pics/ezLoadHero.png)
+
+### Infosections
+
+![Info1](pics/ezLoadInfo1.png)
+![Info2](pics/ezLoadInfo2.png)
+![Features](pics/ezLoadFeatures.png)
+![Info3](pics/ezLoadInfo3.png)
+
+### Signup and Signin
+
+![Signup](pics/ezLoadSignup.png)
+![Signin](pics/ezLoadSignin.png)
+
+### View Postings and Create Post
+
+![ViewPostingsHero](pics/ezLoadViewPostingHero.png)
+![Postings](pics/ezLoadPostingsScreen.png)
+![CreatePost](pics/ezLoadCreatePost.png)
+
+## Cloning and forking prerequisites
+
+- Make sure you have the recommended version or later of Node installed
+- Have a MongoDB clusteer
+- Have a .env file with your MongoDB connection string and JWT secret code
+
+## Next Steps
+
+- More secure authentication using Firebase and/or two factor authentication
+- An expiration token that deletes posts after a certain time limit
+- Allow users to grow their business and network by chatting with others
