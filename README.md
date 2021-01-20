@@ -47,7 +47,7 @@ When you first open up the website, you will be greeted with a stunning live her
 ## Cloning and forking prerequisites
 
 - Make sure you have the recommended version or later of Node installed
-- Have a MongoDB clusteer
+- Have a MongoDB cluster
 - Have a .env file with your MongoDB connection string and JWT secret code
 
 ## Next Steps
